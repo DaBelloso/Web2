@@ -1,0 +1,69 @@
+
+CREATE TABLE users (
+                id INT NOT NULL,
+                first_name VARCHAR(30) NOT NULL,
+                last_name VARCHAR(30) NOT NULL,
+                email VARCHAR(30) NOT NULL,
+                password VARCHAR(256) NOT NULL,
+                created VARCHAR(30) NOT NULL,
+                CONSTRAINT users_pk PRIMARY KEY (id)
+)
+
+CREATE TABLE board (
+                id_board INT NOT NULL,
+                id INT NOT NULL,
+                nombre_board VARCHAR(30) NOT NULL,
+                CONSTRAINT board_pk PRIMARY KEY (id_board, id)
+)
+
+CREATE TABLE list (
+                id_list INT NOT NULL,
+                nombre_list VARCHAR(30) NOT NULL,
+                id_board INT NOT NULL,
+                CONSTRAINT list_pk PRIMARY KEY (id_list)
+)
+
+CREATE TABLE card (
+                id_card INT NOT NULL,
+                nombre_card VARCHAR(30) NOT NULL,
+                id_list INT NOT NULL,
+                CONSTRAINT card_pk PRIMARY KEY (id_card)
+)
+
+CREATE TABLE comments (
+                id_comments INT NOT NULL,
+                id INT NOT NULL,
+                comentario_comments VARCHAR NOT NULL,
+                id_card INT NOT NULL,
+                CONSTRAINT comments_pk PRIMARY KEY (id_comments, id)
+)
+
+ALTER TABLE board ADD CONSTRAINT users_board_fk
+FOREIGN KEY (id)
+REFERENCES users (id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+
+ALTER TABLE comments ADD CONSTRAINT users_comments_fk
+FOREIGN KEY (id)
+REFERENCES users (id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+
+ALTER TABLE list ADD CONSTRAINT board_list_fk
+FOREIGN KEY (id_board)
+REFERENCES board (id_board)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+
+ALTER TABLE card ADD CONSTRAINT list_card_fk
+FOREIGN KEY (id_list)
+REFERENCES list (id_list)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+
+ALTER TABLE comments ADD CONSTRAINT card_comments_fk
+FOREIGN KEY (id_card)
+REFERENCES card (id_card)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION

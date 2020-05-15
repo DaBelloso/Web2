@@ -1,0 +1,38 @@
+{
+  "name": "proyecto2",
+  "version": "1.0.0",
+  "description": "Proyecto2",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SilfridoReverol/Proyect2.git"
+  },
+  "author": "SilfridoReverol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SilfridoReverol/Proyect2/issues"
+  },
+  "homepage": "https://github.com/SilfridoReverol/Proyect2#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "create-react-app": "^3.4.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^2.2.0",
+    "mssql": "^6.2.0",
+    "nodeman": "^1.1.2",
+    "react": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.1",
+    "sequelize": "^5.21.6",
+    "sequelize-msnodesqlv8": "^0.2.6-beta.8",
+    "tedious": "^8.2.0"
+  },
+  "devDependencies": {}
+}
